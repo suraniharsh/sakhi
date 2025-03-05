@@ -51,12 +51,12 @@ export const cycleService = {
   },
 
   // Get user's cycle history
-  async getCycleHistory(userId: string, limit: number = 12): Promise<CycleLog[]> {
+  async getCycleHistory(userId: string, limitCount: number = 12): Promise<CycleLog[]> {
     const cyclesQuery = query(
       collection(db, CYCLES_COLLECTION),
       where('userId', '==', userId),
       orderBy('startDate', 'desc'),
-      limit(limit)
+      limit(limitCount)
     );
 
     const snapshot = await getDocs(cyclesQuery);

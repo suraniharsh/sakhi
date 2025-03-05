@@ -4,7 +4,6 @@ import { SymptomLogger } from '../components/symptoms/SymptomLogger';
 import { DailySummaryView } from '../components/symptoms/DailySummaryView';
 import { SymptomTrends } from '../components/symptoms/SymptomTrends';
 import { SymptomService } from '../services/symptomService';
-import { ReportService } from '../services/reportService';
 import { symptoms, moods } from '../data/masterData';
 import { DailySymptomSummary, SymptomLog } from '../types/symptoms';
 import { motion } from 'framer-motion';
