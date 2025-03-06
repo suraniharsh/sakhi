@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext';
 import { AuthPage } from './pages/AuthPage';
@@ -12,8 +12,10 @@ import { Sidebar } from './components/navigation/Sidebar';
 import { LoadingSpinner } from './components/ui/LoadingSpinner';
 import { PredictionsPage } from './pages/PredictionsPage';
 import { ProfilePage } from './pages/ProfilePage';
+import { SafetyResourcesPage } from './pages/SafetyResourcesPage';
 import { useAuth } from './hooks/useAuth';
 import { Toaster } from 'react-hot-toast';
+import { logEnvironmentVariables } from './utils/envTest';
 import './App.css';
 
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -42,6 +44,11 @@ const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) =
 };
 
 export const App: React.FC = () => {
+  useEffect(() => {
+    // Log environment variables when the app starts
+    logEnvironmentVariables();
+  }, []);
+
   return (
     <AuthProvider>
       <Router>
@@ -113,6 +120,40 @@ export const App: React.FC = () => {
             element={
               <ProtectedRoute>
                 <ProfilePage />
+              </ProtectedRoute>
+            }
+          />
+          
+          {/* Safety Resources Routes */}
+          <Route
+            path="/safety"
+            element={
+              <ProtectedRoute>
+                <SafetyResourcesPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/safety/contacts"
+            element={
+              <ProtectedRoute>
+                <SafetyResourcesPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/safety/alert"
+            element={
+              <ProtectedRoute>
+                <SafetyResourcesPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/safety/report"
+            element={
+              <ProtectedRoute>
+                <SafetyResourcesPage />
               </ProtectedRoute>
             }
           />

@@ -1,0 +1,14 @@
+{
+  "name": "twilio-proxy-server",
+  "version": "1.0.0",
+  "description": "A simple proxy server for Twilio API calls",
+  "main": "twilio-proxy-server.js",
+  "scripts": {
+    "start": "node twilio-proxy-server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "twilio": "^4.19.0"
+  }
+} 

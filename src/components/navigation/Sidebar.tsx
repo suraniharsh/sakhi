@@ -11,7 +11,8 @@ import {
   UserIcon,
   ChatBubbleLeftRightIcon,
   ArrowTrendingUpIcon,
-  ArrowRightOnRectangleIcon
+  ArrowRightOnRectangleIcon,
+  ShieldCheckIcon
 } from '@heroicons/react/24/outline';
 import { useAuth } from '../../contexts/AuthContext';
 
@@ -20,6 +21,7 @@ const navItems = [
   { path: '/cycle', label: 'Log Cycle', icon: CalendarIcon },
   { path: '/predictions', label: 'Predictions', icon: ArrowTrendingUpIcon },
   { path: '/reminders', label: 'Reminders', icon: BellIcon },
+  { path: '/safety', label: 'Safety', icon: ShieldCheckIcon },
   { path: '/profile', label: 'Profile', icon: UserIcon },
   { path: '/community', label: 'Community', icon: ChatBubbleLeftRightIcon },
 ];
